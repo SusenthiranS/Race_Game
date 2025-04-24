@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dogjmp1rb6alh"]
+
+[ext_resource type="PackedScene" uid="uid://ba7i8pfqitpmu" path="res://scenes/UI/mobile_ui.tscn" id="1_flq4q"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pohy5"]
+
+[sub_resource type="MeshLibrary" id="MeshLibrary_pohy5"]
+item/0/name = "Plane"
+item/0/mesh = SubResource("PlaneMesh_pohy5")
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/mesh_cast_shadow = 1
+item/0/shapes = []
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
+
+[sub_resource type="Environment" id="Environment_pohy5"]
+
+[node name="LevelParent" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 10.267, 0)
+layers = 4
+shadow_enabled = true
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="GridMap" type="GridMap" parent="Ground"]
+mesh_library = SubResource("MeshLibrary_pohy5")
+collision_layer = 4
+collision_mask = 11
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pohy5")
+
+[node name="Mobile_UI" parent="." instance=ExtResource("1_flq4q")]
