@@ -13,7 +13,6 @@ height = 1.5
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 14
 script = ExtResource("1_3vyb7")
-show_joystick = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_u8vuu")
@@ -21,5 +20,7 @@ shape = SubResource("CapsuleShape3D_u8vuu")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_3vyb7")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="CameraHolder" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraHolder"]
 transform = Transform3D(1, 0, 0, 0, 0.956768, 0.290852, 0, -0.290852, 0.956768, 0, 0.661371, 2.82555)
