@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Race Game"
-run/main_scene="uid://bbyw2xc4jmxho"
+run/main_scene="uid://ccaokdklwi73b"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

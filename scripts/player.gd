@@ -16,8 +16,9 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	if(position.y <= -30):
-		get_tree().change_scene_to_file("res://scenes/start_point.tscn")
+	if(position.y <= -15):
+		get_tree().change_scene_to_file("res://scenes/start_menu_screen.tscn")
+		return
 	
 	if not is_on_floor():
 		velocity.y += get_gravity().y * delta

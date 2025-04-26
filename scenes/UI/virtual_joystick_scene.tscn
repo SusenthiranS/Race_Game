@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bl0aghrima1hv"]
 
-[ext_resource type="Texture2D" uid="uid://b6bh4kudiglkj" path="res://assets/anolog_outline.png" id="1_2ae87"]
-[ext_resource type="Script" uid="uid://0egs6iqcmpgb" path="res://scenes/UI/virtual_joystick.gd" id="1_12ui5"]
-[ext_resource type="Texture2D" uid="uid://detcbcdstaiqk" path="res://assets/anolog_outline_transprent.png" id="2_6v36u"]
-[ext_resource type="Texture2D" uid="uid://hr113tx23h1f" path="res://assets/anolog.png" id="2_oepys"]
+[ext_resource type="Texture2D" uid="uid://2axwsathxcis" path="res://assets/anolog_outline.png" id="1_2ae87"]
+[ext_resource type="Script" uid="uid://6twhw30shvhx" path="res://scenes/UI/virtual_joystick.gd" id="1_12ui5"]
+[ext_resource type="Texture2D" uid="uid://ca1mblr5yi6ul" path="res://assets/anolog_outline_transprent.png" id="2_6v36u"]
+[ext_resource type="Texture2D" uid="uid://dnp3ns4efsnpv" path="res://assets/anolog.png" id="2_oepys"]
 
 [node name="Virtual Joystick" type="Control"]
 layout_mode = 3
