@@ -17,7 +17,7 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	
 	if(position.y <= -15):
-		get_tree().change_scene_to_file("res://scenes/start_menu_screen.tscn")
+		Global.load_scene_with_loading_screen("res://scenes/start_menu_screen.tscn")
 		return
 	
 	if not is_on_floor():
