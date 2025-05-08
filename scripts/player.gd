@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED:float = 300.0
+var SPEED:float = 0
 const JUMP_VELOCITY:float = 400.0
 @export var show_joystick:bool = false
 @onready var grid_map = $"../Ground/GridMap";
@@ -10,12 +10,17 @@ const JUMP_VELOCITY:float = 400.0
 
 var previous_position = Vector3()
 
+func _ready() -> void:
+	SPEED = Global.PLAYER_SPEED
+	if(!show_joystick and joystick):
+		joystick.queue_free()
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenDrag:
 		camera_holder.rotate_y(-event.relative.x * 0.01)
 
 func _physics_process(delta: float) -> void:
-	
+	SPEED = Global.PLAYER_SPEED
 	if(position.y <= -15):
 		Global.load_scene_with_loading_screen("res://scenes/start_menu_screen.tscn")
 		return
@@ -30,8 +35,6 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_direction.z * SPEED * delta
 		velocity.x = move_direction.x * SPEED * delta
 	else:
-		if(joystick):
-			joystick.queue_free()
 		
 		var input_direction = Vector3.ZERO
 		

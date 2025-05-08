@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var grid_ground = $Ground/GridMap
+@onready var items_group = $Items
 
 #func _ready() -> void:
 	#spawn_item()
@@ -19,7 +20,7 @@ func spawn_item():
 	
 	var item = preload("res://scenes/item.tscn").instantiate()
 	item.position = spawn_position + Vector3(0,0.75,0)
-	add_child(item)
+	items_group.add_child(item)
 	Global.SPAWNED_ITEMS += 1
 
 func _on_timer_timeout() -> void:

@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbyw2xc4jmxho"]
+[gd_scene load_steps=11 format=3 uid="uid://bbyw2xc4jmxho"]
 
 [ext_resource type="PackedScene" uid="uid://dogjmp1rb6alh" path="res://scenes/level_parent.tscn" id="1_ueraj"]
 [ext_resource type="Script" uid="uid://0i141kuvmy2u" path="res://scripts/start_point.gd" id="2_8mhjp"]
 [ext_resource type="PackedScene" uid="uid://72oqhyaeh51k" path="res://scenes/player.tscn" id="2_bi1dq"]
 [ext_resource type="PackedScene" uid="uid://nkc13wriuey4" path="res://scenes/item.tscn" id="5_erp1y"]
 [ext_resource type="MeshLibrary" uid="uid://b2e6p2h2oaltg" path="res://particals/mesh_particles.tres" id="5_v0a5b"]
+[ext_resource type="PackedScene" uid="uid://cmg6tlq7djl2n" path="res://scenes/screen_ui.tscn" id="6_v0a5b"]
+[ext_resource type="Script" uid="uid://bnnllrjqenclm" path="res://scripts/screen_ui.gd" id="7_moybt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o0xd4"]
 sky_top_color = Color(0.640529, 0.886381, 0.908035, 1)
@@ -53,5 +55,8 @@ environment = SubResource("Environment_erp1y")
 [node name="Timer" type="Timer" parent="." index="6"]
 wait_time = 5.0
 autostart = true
+
+[node name="screen_ui" parent="." index="7" instance=ExtResource("6_v0a5b")]
+script = ExtResource("7_moybt")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
