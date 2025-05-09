@@ -5,10 +5,14 @@ var SPAWNED_ITEMS = 0
 var PLAYER_POWERS_COLLECTION = 0
 var PLAYER_SPEED:float = 300.0
 
-var POWERS_TYPES = ["BOOST"]
+var POWERS_TYPES = ["BOOST","SHIELD","LOUNCHER","JET","HEALTH"]
 
 var POWERS_CATECAGRIES = {
-	POWERS_TYPES[0]:"res://scenes/item.tscn",
+	POWERS_TYPES[0]:Color.RED,
+	POWERS_TYPES[1]:Color.BLUE,
+	POWERS_TYPES[2]:Color.YELLOW,
+	POWERS_TYPES[3]:Color.PURPLE,
+	POWERS_TYPES[4]:Color.GREEN,
 }
 
 func change_player_speed_based_on_power(power:String) -> void:

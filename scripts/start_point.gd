@@ -18,8 +18,12 @@ func spawn_item():
 	var randam_index = randi() % available_position.size()
 	var spawn_position = available_position[randam_index]
 	
+	var power_type = Global.POWERS_TYPES[randi() % Global.POWERS_TYPES.size()]
 	var item = preload("res://scenes/item.tscn").instantiate()
 	item.position = spawn_position + Vector3(0,0.75,0)
+	item.power_type = power_type
+	item.get_node("MeshInstance3D").material_override = StandardMaterial3D.new()
+	item.get_node("MeshInstance3D").material_override.albedo_color = Global.POWERS_CATECAGRIES[power_type]
 	items_group.add_child(item)
 	Global.SPAWNED_ITEMS += 1
 
