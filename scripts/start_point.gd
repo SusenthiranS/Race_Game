@@ -28,5 +28,5 @@ func spawn_item():
 	Global.SPAWNED_ITEMS += 1
 
 func _on_timer_timeout() -> void:
-	if(Global.SPAWNED_ITEMS<=3):
+	if(items_group.get_child_count()<=5):
 		spawn_item()

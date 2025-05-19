@@ -39,15 +39,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 39.8437)
 
 [node name="Item" parent="Items" index="0" instance=ExtResource("5_erp1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1391, 0.533722, 0)
+power_type = "SHIELD"
 
 [node name="Item2" parent="Items" index="1" instance=ExtResource("5_erp1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.061758, 0.533722, -35.094)
+power_type = "LOUNCHER"
 
 [node name="Item3" parent="Items" index="2" instance=ExtResource("5_erp1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95747, 0.533722, 22.0547)
+power_type = "DAMAGE"
 
 [node name="Item4" parent="Items" index="3" instance=ExtResource("5_erp1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.1299, 0.533722, -17.2774)
+power_type = "HEALTH"
 
 [node name="WorldEnvironment" parent="." index="4"]
 environment = SubResource("Environment_erp1y")
