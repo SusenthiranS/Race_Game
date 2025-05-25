@@ -13,6 +13,7 @@ height = 1.5
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 14
 script = ExtResource("1_3vyb7")
+show_joystick = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_u8vuu")

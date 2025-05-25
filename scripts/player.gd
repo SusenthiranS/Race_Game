@@ -51,6 +51,15 @@ func _physics_process(delta: float) -> void:
 			input_direction.x = 1
 		else:
 			input_direction.x = 0
+			
+		if(Input.is_action_just_pressed("power_1") and Global.PLAYER_POWERS_COLLECTION.size()>0):
+			Global.change_player_speed_based_on_power(Global.PLAYER_POWERS_COLLECTION[0])
+		elif(Input.is_action_just_pressed("power_2") and Global.PLAYER_POWERS_COLLECTION.size()>1):
+			Global.change_player_speed_based_on_power(Global.PLAYER_POWERS_COLLECTION[1])
+		elif(Input.is_action_just_pressed("power_3") and Global.PLAYER_POWERS_COLLECTION.size()>2):
+			Global.change_player_speed_based_on_power(Global.PLAYER_POWERS_COLLECTION[2])
+		elif(Input.is_action_just_pressed("power_4") and Global.PLAYER_POWERS_COLLECTION.size()>3):
+			Global.change_player_speed_based_on_power(Global.PLAYER_POWERS_COLLECTION[3])
 	
 		input_direction = input_direction.normalized();
 		var forward = camera_holder.global_transform.basis.z
