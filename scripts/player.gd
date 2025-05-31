@@ -12,6 +12,7 @@ var previous_position = Vector3()
 
 func _ready() -> void:
 	SPEED = Global.PLAYER_SPEED
+	Global.IS_MOBILE_SCREEN = show_joystick
 	if(!show_joystick and joystick):
 		joystick.queue_free()
 
@@ -28,14 +29,13 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += get_gravity().y * delta
 	
-	if(show_joystick):
+	if(Global.IS_MOBILE_SCREEN):
 		var joystick_input = joystick.get_velocity(Vector3())
 		var move_direction = Vector3.ZERO
 		move_direction =  (joystick_input.z * camera_holder.global_transform.basis.z) + (joystick_input.x * camera_holder.global_transform.basis.x)
 		velocity.z = move_direction.z * SPEED * delta
 		velocity.x = move_direction.x * SPEED * delta
 	else:
-		
 		var input_direction = Vector3.ZERO
 		
 		if(Input.is_action_pressed("forward")):
@@ -73,3 +73,14 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_direction.z * SPEED * delta
 	
 	move_and_slide()
+
+
+func _on_mobile_ui_button_pressed(type: Variant) -> void:
+	if(type == "power_1" and Global.PLAYER_POWERS_COLLECTION.size()>0):
+		Global.change_player_speed_based_on_power(Global.PLAYER_POWERS_COLLECTION[0])
+	elif(type == "power_2" and Global.PLAYER_POWERS_COLLECTION.size()>1):
+		Global.change_player_speed_based_on_power(Global.PLAYER_POWERS_COLLECTION[1])
+	elif(type == "power_3" and Global.PLAYER_POWERS_COLLECTION.size()>2):
+		Global.change_player_speed_based_on_power(Global.PLAYER_POWERS_COLLECTION[2])
+	elif(type == "power_4" and Global.PLAYER_POWERS_COLLECTION.size()>3):
+		Global.change_player_speed_based_on_power(Global.PLAYER_POWERS_COLLECTION[3])

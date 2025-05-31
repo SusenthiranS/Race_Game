@@ -47,7 +47,7 @@ power_type = "LOUNCHER"
 
 [node name="Item3" parent="Items" index="2" instance=ExtResource("5_erp1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95747, 0.533722, 22.0547)
-power_type = "JET"
+power_type = "DAMAGE"
 
 [node name="Item4" parent="Items" index="3" instance=ExtResource("5_erp1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.1299, 0.533722, -17.2774)
@@ -63,4 +63,5 @@ autostart = true
 [node name="screen_ui" parent="." index="7" instance=ExtResource("6_v0a5b")]
 script = ExtResource("7_moybt")
 
+[connection signal="button_pressed" from="Mobile_UI" to="Player" method="_on_mobile_ui_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

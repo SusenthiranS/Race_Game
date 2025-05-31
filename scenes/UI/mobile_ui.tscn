@@ -20,25 +20,29 @@ layout_mode = 1
 
 [node name="Buttons_Container" type="Control" parent="Control"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+anchor_left = 0.5
+anchor_top = 0.6
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -300.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Button" type="TouchScreenButton" parent="Control/Buttons_Container"]
-position = Vector2(0, 100)
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Buttons_Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="TouchScreenButton" parent="Control/Buttons_Container/HBoxContainer"]
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("2_tktx1")
 
-[node name="Button2" type="TouchScreenButton" parent="Control/Buttons_Container"]
-position = Vector2(150, 100)
+[node name="Button2" type="TouchScreenButton" parent="Control/Buttons_Container/HBoxContainer"]
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("2_tktx1")
 
-[connection signal="pressed" from="Control/Buttons_Container/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Control/Buttons_Container/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/Buttons_Container/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Buttons_Container/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

@@ -4,6 +4,7 @@ var PLAYER_HEALTH:int = 100
 var SPAWNED_ITEMS = 0
 var PLAYER_POWERS_COLLECTION = []
 var PLAYER_SPEED:float = 300.0
+var IS_MOBILE_SCREEN:bool = false
 
 var screen_ui:Node = null
 
@@ -34,6 +35,13 @@ func _ready() -> void:
 
 func set_screen_ui(ui_node):
 	screen_ui = ui_node
+
+func reset():
+	PLAYER_HEALTH = 100
+	SPAWNED_ITEMS = 0
+	PLAYER_POWERS_COLLECTION = []
+	PLAYER_SPEED = 300.0
+
 
 func load_scene_with_loading_screen(scene_path: String) -> void:
 	var loading_screen = preload("res://scenes/loading_screen.tscn").instantiate()

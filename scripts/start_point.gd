@@ -3,8 +3,8 @@ extends Node3D
 @onready var grid_ground = $Ground/GridMap
 @onready var items_group = $Items
 
-#func _ready() -> void:
-	#spawn_item()
+func _ready() -> void:
+	Global.reset()
 	
 func spawn_item():
 	var grid_cells = grid_ground.get_used_cells();
